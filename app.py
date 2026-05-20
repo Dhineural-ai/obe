@@ -25,10 +25,18 @@ def extract_text_from_pdf(pdf_file):
     pdf_reader = PyPDF2.PdfReader(pdf_file)
 
     for page in pdf_reader.pages:
+
         extracted = page.extract_text()
 
         if extracted:
-            text += extracted + "\n"
+
+            # Remove excessive line breaks
+            extracted = extracted.replace("\n", " ")
+
+            # Remove extra spaces
+            extracted = re.sub(r"\s+", " ", extracted)
+
+            text += extracted + "\n\n"
 
     return text
 def analyze_alignment(vision, peo, course):
