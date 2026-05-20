@@ -81,15 +81,15 @@ def generate_final_report(alignment, mapping, refined):
 
 {refined}
 """
-try:
+if vision_file is not None and peo_file is not None and course_file is not None:
 
-    with st.spinner("Reading PDFs..."):
+    try:
 
-        vision_text = extract_text_from_pdf(vision_file)
-        peo_text = extract_text_from_pdf(peo_file)
-        course_text = extract_text_from_pdf(course_file)
+        with st.spinner("Reading PDFs..."):
 
-    with st.spinner("Analyzing Vision-Mission Alignment..."):
+            vision_text = extract_text_from_pdf(vision_file)
+            peo_text = extract_text_from_pdf(peo_file)
+            course_text = extract_text_from_pdf(course_file)
 
         alignment_report = analyze_alignment(
             vision_text,
@@ -97,14 +97,10 @@ try:
             course_text
         )
 
-    with st.spinner("Generating CO-PO Mapping Analysis..."):
-
         mapping_report = generate_mapping_analysis(
             course_text,
             peo_text
         )
-
-    with st.spinner("Refining Course File..."):
 
         refined_course = refine_course_document(
             vision_text,
@@ -112,44 +108,26 @@ try:
             course_text
         )
 
-    with st.spinner("Preparing Final Report..."):
-
         final_report = generate_final_report(
             alignment_report,
             mapping_report,
             refined_course
         )
 
-    st.success("OBE Refinement Completed")
+        st.success("OBE Refinement Completed")
 
-    st.subheader("Vision-Mission Alignment")
-    st.text_area(
-        "Alignment Analysis",
-        alignment_report,
-        height=300
-    )
+        st.text_area(
+            "Refined Course Document",
+            refined_course,
+            height=500
+        )
 
-    st.subheader("CO-PO Mapping Analysis")
-    st.text_area(
-        "Mapping Analysis",
-        mapping_report,
-        height=300
-    )
+        st.download_button(
+            "Download Report",
+            final_report,
+            file_name="obe_report.txt"
+        )
 
-    st.subheader("Refined Course File")
-    st.text_area(
-        "Refined Course Document",
-        refined_course,
-        height=700
-    )
+    except Exception as e:
 
-    st.subheader("Complete OBE Report")
-    st.download_button(
-        label="Download Final Report",
-        data=final_report,
-        file_name="obe_refined_report.txt",
-        mime="text/plain"
-    )
-
-except Exception as e:
-    st.error(f"Error: {e}")
+        st.error(f"Error: {e}")
