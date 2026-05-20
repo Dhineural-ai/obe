@@ -1,59 +1,73 @@
 import streamlit as st
+        try:
 
-from utils.pdf_reader import extract_text_from_pdf
+            with st.spinner("Reading PDFs..."):
 
-from agents.bloom_agent import evaluate_bloom_levels
-from agents.pedagogy_agent import suggest_pedagogy
-from agents.ict_agent import suggest_ict_tools
-from agents.assignment_agent import generate_assignments
-from agents.report_agent import generate_report
+                vision_text = extract_text_from_pdf(vision_file)
+                peo_text = extract_text_from_pdf(peo_file)
+                course_text = extract_text_from_pdf(course_file)
 
-st.set_page_config(page_title="OBE Intelligence Platform")
+            with st.spinner("Analyzing Vision-Mission Alignment..."):
 
-st.title("AI-Powered OBE Intelligence Platform")
+                alignment_report = analyze_alignment(
+                    vision_text,
+                    peo_text,
+                    course_text
+                )
 
-st.subheader("Institutional Inputs")
+            with st.spinner("Generating CO-PO Mapping Analysis..."):
 
-vision_file = st.file_uploader("Upload Vision & Mission PDF")
-peo_file = st.file_uploader("Upload PEO/PO/PSO PDF")
+                mapping_report = generate_mapping_analysis(
+                    course_text,
+                    peo_text
+                )
 
-university_website = st.text_input("University Website")
+            with st.spinner("Refining Course File..."):
 
-st.subheader("Course File Upload")
+                refined_course = refine_course_document(
+                    vision_text,
+                    peo_text,
+                    course_text
+                )
 
-course_file = st.file_uploader("Upload Course PDF")
+            with st.spinner("Preparing Final Report..."):
 
-if course_file:
+                final_report = generate_final_report(
+                    alignment_report,
+                    mapping_report,
+                    refined_course
+                )
 
-    st.success("Course Uploaded Successfully")
+            st.success("OBE Refinement Completed")
 
-    try:
-        course_text = extract_text_from_pdf(course_file)
+            st.subheader("Vision-Mission Alignment")
+            st.text_area(
+                "Alignment Analysis",
+                alignment_report,
+                height=300
+            )
 
-        st.subheader("AI Evaluation Running...")
+            st.subheader("CO-PO Mapping Analysis")
+            st.text_area(
+                "Mapping Analysis",
+                mapping_report,
+                height=300
+            )
 
-        bloom_results = evaluate_bloom_levels(course_text)
+            st.subheader("Refined Course File")
+            st.text_area(
+                "Refined Course Document",
+                refined_course,
+                height=700
+            )
 
-        pedagogy_results = suggest_pedagogy(bloom_results)
+            st.subheader("Complete OBE Report")
+            st.download_button(
+                label="Download Final Report",
+                data=final_report,
+                file_name="obe_refined_report.txt",
+                mime="text/plain"
+            )
 
-        ict_results = suggest_ict_tools(course_text)
-
-        assignments = generate_assignments(course_text)
-
-        final_report = generate_report(
-            bloom_results,
-            pedagogy_results,
-            ict_results,
-            assignments
-        )
-
-        st.subheader("AI Evaluation Report")
-
-        st.text_area(
-            "Generated Report",
-            final_report,
-            height=700
-        )
-
-    except Exception as e:
-        st.error(f"Error: {e}")
+        except Exception as e:
+            st.error(f"Error: {e}")
