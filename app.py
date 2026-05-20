@@ -1,15 +1,29 @@
+
 import streamlit as st
 import PyPDF2
 import re
-st.title("OBE Course File Refinement Tool")
+import os
+from io import BytesIO
+from dotenv import load_dotenv
+from openai import OpenAI
+from docx import Document
+from docx.shared import Inches
+
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+st.set_page_config(page_title="AI OBE Intelligence Platform")
+
+st.title("AI Powered OBE Course File Refinement System")
 
 vision_file = st.file_uploader(
-    "Upload Vision-Mission PDF",
+    "Upload Vision Mission PDF",
     type=["pdf"]
 )
 
 peo_file = st.file_uploader(
-    "Upload PEO-PO PDF",
+    "Upload PEO PO PSO PDF",
     type=["pdf"]
 )
 
@@ -18,7 +32,6 @@ course_file = st.file_uploader(
     type=["pdf"]
 )
 
-# PDF text extraction function
 def extract_text_from_pdf(pdf_file):
 
     text = ""
@@ -31,110 +44,153 @@ def extract_text_from_pdf(pdf_file):
 
         if extracted:
 
-            # Remove excessive line breaks
             extracted = extracted.replace("\n", " ")
 
-            # Remove extra spaces
             extracted = re.sub(r"\s+", " ", extracted)
 
             text += extracted + "\n\n"
 
     return text
-def analyze_alignment(vision, peo, course):
 
-    return f"""
-VISION:
-{vision[:500]}
+def generate_refined_syllabus(
+    vision_text,
+    peo_text,
+    course_text
+):
 
-PEO:
-{peo[:500]}
+    prompt = f"""
+You are an NBA and OBE expert.
 
-COURSE:
-{course[:500]}
+Analyze the uploaded documents and generate a FULLY REFINED COURSE FILE
+in proper university syllabus format.
 
-Alignment analysis completed.
+STRICT REQUIREMENTS:
+
+1. Rewrite professionally:
+- Prerequisite
+- Course Objectives
+- Course Outcomes
+
+2. Generate:
+- Updated CO-PO Mapping
+- Updated CO-PO Justification
+- Updated Pedagogy
+- Student Centric TL methods
+- ICT enabled tools topic wise
+- Unit wise innovative assignments
+- Mini projects
+- Experiential learning activities
+- Industry oriented activities
+- SDG mapping
+
+3. Ensure complete alignment with:
+- Vision
+- Mission
+- PEO
+- PO
+- PSO
+
+4. Ensure Bloom Taxonomy correctness.
+
+5. Keep format suitable for NBA/NAAC documentation.
+
+6. Generate polished academic content.
+
+VISION & MISSION:
+{vision_text}
+
+PEO PO PSO:
+{peo_text}
+
+COURSE FILE:
+{course_text}
 """
 
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "You are an expert academic OBE consultant."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        temperature=0.3
+    )
 
-def generate_mapping_analysis(course, peo):
+    return response.choices[0].message.content
 
-    return f"""
-CO-PO Mapping Generated Successfully.
+def create_docx(content):
 
-Course Length: {len(course)}
-PEO Length: {len(peo)}
-"""
+    document = Document()
 
+    document.add_heading(
+        "AI Generated Refined OBE Course File",
+        level=1
+    )
 
-def refine_course_document(vision, peo, course):
+    paragraphs = content.split("\n")
 
-    return f"""
-REFINED COURSE DOCUMENT
+    for para in paragraphs:
 
-{course}
-"""
+        para = para.strip()
 
+        if para:
 
-def generate_final_report(alignment, mapping, refined):
+            if para.isupper():
 
-    return f"""
-===== ALIGNMENT REPORT =====
+                document.add_heading(para, level=2)
 
-{alignment}
+            else:
 
-===== MAPPING REPORT =====
+                document.add_paragraph(para)
 
-{mapping}
+    buffer = BytesIO()
 
-===== REFINED COURSE =====
+    document.save(buffer)
 
-{refined}
-"""
-if vision_file is not None and peo_file is not None and course_file is not None:
+    buffer.seek(0)
+
+    return buffer
+
+if (
+    vision_file is not None and
+    peo_file is not None and
+    course_file is not None
+):
 
     try:
 
         with st.spinner("Reading PDFs..."):
 
             vision_text = extract_text_from_pdf(vision_file)
+
             peo_text = extract_text_from_pdf(peo_file)
+
             course_text = extract_text_from_pdf(course_file)
 
-        alignment_report = analyze_alignment(
-            vision_text,
-            peo_text,
-            course_text
-        )
+        with st.spinner("AI is generating refined syllabus..."):
 
-        mapping_report = generate_mapping_analysis(
-            course_text,
-            peo_text
-        )
+            refined_output = generate_refined_syllabus(
+                vision_text,
+                peo_text,
+                course_text
+            )
 
-        refined_course = refine_course_document(
-            vision_text,
-            peo_text,
-            course_text
-        )
+        st.success("Refined syllabus generated successfully")
 
-        final_report = generate_final_report(
-            alignment_report,
-            mapping_report,
-            refined_course
-        )
+        st.markdown(refined_output)
 
-        st.success("OBE Refinement Completed")
-
-        st.text_area(
-            "Refined Course Document",
-            refined_course,
-            height=500
-        )
+        docx_file = create_docx(refined_output)
 
         st.download_button(
-            "Download Report",
-            final_report,
-            file_name="obe_report.txt"
+            label="Download Refined DOCX File",
+            data=docx_file,
+            file_name="Refined_OBE_Course_File.docx",
+            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
 
     except Exception as e:
