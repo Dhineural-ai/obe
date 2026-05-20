@@ -1,0 +1,26 @@
+{
+  "remember": [
+    "Lecture-Based Teaching-Learning",
+    "Technology-Based Learning"
+  ],
+  "understand": [
+    "Group Teaching and Learning",
+    "Peer Teaching"
+  ],
+  "apply": [
+    "Learning through Problem-Solving",
+    "Kinesthetic Learning"
+  ],
+  "analyze": [
+    "Inquiry-Based Learning",
+    "Group Teaching and Learning"
+  ],
+  "evaluate": [
+    "Peer Teaching",
+    "Inquiry-Based Learning"
+  ],
+  "create": [
+    "Expeditionary Learning",
+    "Game-Based Learning"
+  ]
+}

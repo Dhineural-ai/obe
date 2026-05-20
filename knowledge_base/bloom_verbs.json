@@ -1,0 +1,8 @@
+{
+  "remember": ["define", "list", "identify"],
+  "understand": ["explain", "describe", "illustrate"],
+  "apply": ["apply", "use", "implement"],
+  "analyze": ["analyze", "compare", "differentiate"],
+  "evaluate": ["evaluate", "justify", "assess"],
+  "create": ["design", "develop", "create"]
+}
