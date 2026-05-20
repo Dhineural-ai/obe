@@ -1,14 +1,12 @@
+
 import streamlit as st
 import PyPDF2
 import re
 import os
 
 from io import BytesIO
-
 from dotenv import load_dotenv
-
 from openai import OpenAI
-
 from docx import Document
 
 load_dotenv()
@@ -25,15 +23,15 @@ st.set_page_config(
 st.title("AI Powered Curriculum Intelligence Platform")
 
 st.markdown("""
-This AI system performs:
-
-- OBE curriculum evaluation
-- syllabus redesign
-- Bloom taxonomy validation
-- CO-PO intelligence mapping
-- pedagogy recommendation
-- assessment strategy generation
-- academic modernization
+This platform performs:
+- Curriculum Intelligence Audit
+- OBE Redesign
+- CO Redesign
+- Intelligent CO-PO Mapping
+- Pedagogy Intelligence
+- Assignment Intelligence
+- Industry Alignment
+- Accreditation Readiness Enhancement
 """)
 
 vision_file = st.file_uploader(
@@ -50,7 +48,6 @@ course_file = st.file_uploader(
     "Upload Course File PDF",
     type=["pdf"]
 )
-
 
 def extract_text_from_pdf(pdf_file):
 
@@ -72,7 +69,6 @@ def extract_text_from_pdf(pdf_file):
 
     return text
 
-
 def generate_curriculum_intelligence_report(
     vision_text,
     peo_text,
@@ -81,133 +77,135 @@ def generate_curriculum_intelligence_report(
 
     prompt = f"""
 
-You are a globally experienced:
-
+You are:
 - NBA expert
 - NAAC expert
-- Outcome Based Education consultant
+- NIRF consultant
+- Curriculum architect
 - Bloom taxonomy specialist
-- curriculum architect
-- industry-aligned syllabus designer
-- academic governance advisor
+- OBE strategist
 
 IMPORTANT:
+DO NOT trust uploaded syllabus blindly.
 
-DO NOT paraphrase the uploaded syllabus.
+Assume:
+- prerequisites may be weak
+- COs may be weak
+- mappings may be illogical
+- pedagogy may be ineffective
 
-DO NOT simply rewrite uploaded content.
+unless proven otherwise.
 
-Instead:
+DO NOT simply paraphrase.
 
-CRITICALLY EVALUATE the uploaded syllabus.
-
-Then redesign the course intelligently according to:
-
-- global academic standards
-- Bloom taxonomy
-- Outcome Based Education
-- industry expectations
+You must critically audit and redesign curriculum according to:
+- global standards
+- NBA expectations
 - graduate competency expectations
-- experiential learning
-- student-centric learning
-- PO/PSO attainment
-- mission alignment
+- industry relevance
+- Bloom taxonomy
 - employability
-- innovation
-- real-world application
+- practical competency
 
-STRICTLY FOLLOW THIS PROCESS:
+DO NOT CHANGE:
+- unit titles
+- unit contents
+
+You ARE allowed to redesign:
+- prerequisites
+- objectives
+- course outcomes
+- mappings
+- pedagogy
+- assignments
+- tutorials
+- practical suggestions
 
 STEP 1:
-Analyze weaknesses in uploaded syllabus.
-
-Detect:
-- weak COs
-- non measurable verbs
-- Bloom taxonomy mismatch
-- weak pedagogy
-- unrealistic mapping
-- lack of industry relevance
-- lack of experiential learning
-- poor curriculum alignment
+Analyze weaknesses in current syllabus.
 
 STEP 2:
-Determine what students SHOULD ACTUALLY learn in this course
-at this semester level.
+Determine what students SHOULD ideally learn globally.
 
 STEP 3:
-Generate IDEAL version of:
-
-- prerequisite
-- course objectives
-- course outcomes
-
-Ensure:
-- measurable COs
-- proper Bloom distribution
-- practical competency development
-- analytical skills
-- problem solving
-- real-world application
+Redesign prerequisites logically.
 
 STEP 4:
-Generate:
-
-- Correct CO-PO mapping matrix
-- Correct CO-PSO mapping matrix
-- Realistic mapping strengths
-- Proper mapping justifications
-
-IMPORTANT:
-Mappings must NOT be random.
-Mappings must be based on actual competency contribution.
+Redesign course objectives intelligently.
 
 STEP 5:
-Generate UNIT-WISE:
-
-- student-centric TL pedagogy
-- active learning strategy
-- experiential learning activity
-- inquiry-based learning
-- collaborative learning
-- industry-oriented activity
-- problem-solving strategy
-- peer teaching activity
-- ICT enabled tools
-
-STEP 6:
-Generate 3 HIGH-VALUE TERM WORKS.
-
-Each term work must:
-- support CO attainment
-- support PO/PSO attainment
-- improve employability
-- improve analytical ability
-- improve practical competency
-- improve innovation
-
-STEP 7:
-Generate:
-
-- mini projects
-- real-world applications
-- interdisciplinary activities
-- SDG mapping
-- assessment strategy
-- rubrics suggestion
-
-STEP 8:
-Generate FINAL REFINED COURSE FILE.
+Generate ideal course outcomes.
 
 IMPORTANT:
-The output should look like a REAL modern university syllabus.
+For each CO:
+- identify Bloom level
+- justify Bloom level
+- explain expected competency
 
-The output should be:
-- professional
-- structured
-- accreditation ready
-- globally aligned
-- academically meaningful
+STEP 6:
+Generate intelligent CO-PO-PSO mapping.
+
+IMPORTANT:
+Every mapping value must have:
+- logical justification
+- competency-based reasoning
+
+STEP 7:
+Generate UNIT-WISE pedagogy.
+
+For each unit:
+- pedagogy method
+- exact activity
+- how activity should be conducted
+- mapped CO
+- mapped PO
+- mapped PSO
+- graduate competency developed
+
+Use:
+- Inquiry Based Learning
+- Peer Teaching
+- Group Learning
+- Problem Solving
+- Technology Based Learning
+- Game Based Learning
+- Collaborative Learning
+
+STEP 8:
+Generate UNIT-WISE ICT tools.
+
+STEP 9:
+Generate 3 HIGH VALUE TERM WORKS.
+
+Assignments must:
+- cover all units
+- support CO attainment
+- support PO attainment
+- improve employability
+- improve communication
+- improve teamwork
+- improve practical competency
+
+For each assignment provide:
+- title
+- objective
+- execution strategy
+- mapped COs
+- mapped POs
+- mapped PSOs
+- Bloom level
+
+STEP 10:
+Suggest improved practicals and tutorials.
+
+STEP 11:
+Generate industry-oriented activities.
+
+STEP 12:
+Generate SDG mapping.
+
+STEP 13:
+Generate final modern accreditation-ready course file.
 
 VISION & MISSION:
 {vision_text}
@@ -225,7 +223,7 @@ COURSE FILE:
         messages=[
             {
                 "role": "system",
-                "content": "You are a senior global curriculum intelligence expert."
+                "content": "You are a globally experienced curriculum intelligence expert."
             },
             {
                 "role": "user",
@@ -236,7 +234,6 @@ COURSE FILE:
     )
 
     return response.choices[0].message.content
-
 
 def create_docx(content):
 
@@ -255,7 +252,7 @@ def create_docx(content):
 
         if para:
 
-            if len(para) < 100 and (
+            if len(para) < 120 and (
                 para.isupper() or
                 para.endswith(":")
             ):
@@ -273,7 +270,6 @@ def create_docx(content):
     buffer.seek(0)
 
     return buffer
-
 
 if (
     vision_file is not None and
