@@ -1,29 +1,33 @@
-def generate_report(
-    bloom_results,
-    pedagogy_results,
-    ict_results,
-    assignments
+def generate_final_report(
+    alignment_report,
+    mapping_report,
+    refined_course
 ):
 
-    report = ""
+    report = f"""
+==============================
+ADVANCED OBE AI REPORT
+==============================
 
-    report += "\n===== BLOOM ANALYSIS =====\n"
 
-    for item in bloom_results:
-        report += f"Verb: {item['verb']} | Level: {item['level']}\n"
+VISION-MISSION ALIGNMENT
 
-    report += "\n===== PEDAGOGY SUGGESTIONS =====\n"
+{alignment_report}
 
-    for item in pedagogy_results:
-        report += f"{item['bloom_level']} -> {item['pedagogy']}\n"
 
-    report += "\n===== ICT TOOL SUGGESTIONS =====\n"
+====================================
+CO-PO-PSO MAPPING ANALYSIS
+====================================
 
-    for tool in ict_results:
-        report += f"- {tool}\n"
+{mapping_report}
 
-    report += "\n===== ASSIGNMENT SUGGESTIONS =====\n"
 
-    report += assignments
+====================================
+REFINED COURSE DOCUMENT
+====================================
+
+{refined_course}
+
+"""
 
     return report
