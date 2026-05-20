@@ -1,8 +1,15 @@
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+import os
 
-llm = ChatOpenAI(model="gpt-4o-mini")
+load_dotenv()
 
 def generate_assignments(course_text):
+
+    llm = ChatOpenAI(
+        model="gpt-4o-mini",
+        api_key=os.getenv("OPENAI_API_KEY")
+    )
 
     prompt = f'''
 Generate:
