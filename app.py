@@ -1,5 +1,6 @@
 import streamlit as st
 import PyPDF2
+import re
 st.title("OBE Course File Refinement Tool")
 
 vision_file = st.file_uploader(
