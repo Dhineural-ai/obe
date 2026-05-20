@@ -1,24 +1,43 @@
-
 import streamlit as st
 import PyPDF2
 import re
 import os
+
 from io import BytesIO
+
 from dotenv import load_dotenv
+
 from openai import OpenAI
+
 from docx import Document
-from docx.shared import Inches
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY")
+)
 
-st.set_page_config(page_title="AI OBE Intelligence Platform")
+st.set_page_config(
+    page_title="AI Curriculum Intelligence Platform",
+    layout="wide"
+)
 
-st.title("AI Powered OBE Course File Refinement System")
+st.title("AI Powered Curriculum Intelligence Platform")
+
+st.markdown("""
+This AI system performs:
+
+- OBE curriculum evaluation
+- syllabus redesign
+- Bloom taxonomy validation
+- CO-PO intelligence mapping
+- pedagogy recommendation
+- assessment strategy generation
+- academic modernization
+""")
 
 vision_file = st.file_uploader(
-    "Upload Vision Mission PDF",
+    "Upload Vision & Mission PDF",
     type=["pdf"]
 )
 
@@ -31,6 +50,7 @@ course_file = st.file_uploader(
     "Upload Course File PDF",
     type=["pdf"]
 )
+
 
 def extract_text_from_pdf(pdf_file):
 
@@ -52,49 +72,142 @@ def extract_text_from_pdf(pdf_file):
 
     return text
 
-def generate_refined_syllabus(
+
+def generate_curriculum_intelligence_report(
     vision_text,
     peo_text,
     course_text
 ):
 
     prompt = f"""
-You are an NBA and OBE expert.
 
-Analyze the uploaded documents and generate a FULLY REFINED COURSE FILE
-in proper university syllabus format.
+You are a globally experienced:
 
-STRICT REQUIREMENTS:
+- NBA expert
+- NAAC expert
+- Outcome Based Education consultant
+- Bloom taxonomy specialist
+- curriculum architect
+- industry-aligned syllabus designer
+- academic governance advisor
 
-1. Rewrite professionally:
-- Prerequisite
-- Course Objectives
-- Course Outcomes
+IMPORTANT:
 
-2. Generate:
-- Updated CO-PO Mapping
-- Updated CO-PO Justification
-- Updated Pedagogy
-- Student Centric TL methods
-- ICT enabled tools topic wise
-- Unit wise innovative assignments
-- Mini projects
-- Experiential learning activities
-- Industry oriented activities
+DO NOT paraphrase the uploaded syllabus.
+
+DO NOT simply rewrite uploaded content.
+
+Instead:
+
+CRITICALLY EVALUATE the uploaded syllabus.
+
+Then redesign the course intelligently according to:
+
+- global academic standards
+- Bloom taxonomy
+- Outcome Based Education
+- industry expectations
+- graduate competency expectations
+- experiential learning
+- student-centric learning
+- PO/PSO attainment
+- mission alignment
+- employability
+- innovation
+- real-world application
+
+STRICTLY FOLLOW THIS PROCESS:
+
+STEP 1:
+Analyze weaknesses in uploaded syllabus.
+
+Detect:
+- weak COs
+- non measurable verbs
+- Bloom taxonomy mismatch
+- weak pedagogy
+- unrealistic mapping
+- lack of industry relevance
+- lack of experiential learning
+- poor curriculum alignment
+
+STEP 2:
+Determine what students SHOULD ACTUALLY learn in this course
+at this semester level.
+
+STEP 3:
+Generate IDEAL version of:
+
+- prerequisite
+- course objectives
+- course outcomes
+
+Ensure:
+- measurable COs
+- proper Bloom distribution
+- practical competency development
+- analytical skills
+- problem solving
+- real-world application
+
+STEP 4:
+Generate:
+
+- Correct CO-PO mapping matrix
+- Correct CO-PSO mapping matrix
+- Realistic mapping strengths
+- Proper mapping justifications
+
+IMPORTANT:
+Mappings must NOT be random.
+Mappings must be based on actual competency contribution.
+
+STEP 5:
+Generate UNIT-WISE:
+
+- student-centric TL pedagogy
+- active learning strategy
+- experiential learning activity
+- inquiry-based learning
+- collaborative learning
+- industry-oriented activity
+- problem-solving strategy
+- peer teaching activity
+- ICT enabled tools
+
+STEP 6:
+Generate 3 HIGH-VALUE TERM WORKS.
+
+Each term work must:
+- support CO attainment
+- support PO/PSO attainment
+- improve employability
+- improve analytical ability
+- improve practical competency
+- improve innovation
+
+STEP 7:
+Generate:
+
+- mini projects
+- real-world applications
+- interdisciplinary activities
 - SDG mapping
+- assessment strategy
+- rubrics suggestion
 
-3. Ensure complete alignment with:
-- Vision
-- Mission
-- PEO
-- PO
-- PSO
+STEP 8:
+Generate FINAL REFINED COURSE FILE.
 
-4. Ensure Bloom Taxonomy correctness.
+IMPORTANT:
+The output should look like a REAL modern university syllabus.
 
-5. Keep format suitable for NBA/NAAC documentation.
-
-6. Generate polished academic content.
+The output should be:
+- professional
+- structured
+- accreditation ready
+- globally aligned
+- academically meaningful
 
 VISION & MISSION:
 {vision_text}
@@ -104,6 +217,7 @@ PEO PO PSO:
 
 COURSE FILE:
 {course_text}
+
 """
 
     response = client.chat.completions.create(
@@ -111,24 +225,25 @@ COURSE FILE:
         messages=[
             {
                 "role": "system",
-                "content": "You are an expert academic OBE consultant."
+                "content": "You are a senior global curriculum intelligence expert."
             },
             {
                 "role": "user",
                 "content": prompt
             }
         ],
-        temperature=0.3
+        temperature=0.4
     )
 
     return response.choices[0].message.content
+
 
 def create_docx(content):
 
     document = Document()
 
     document.add_heading(
-        "AI Generated Refined OBE Course File",
+        "AI Generated Curriculum Intelligence Report",
         level=1
     )
 
@@ -140,7 +255,10 @@ def create_docx(content):
 
         if para:
 
-            if para.isupper():
+            if len(para) < 100 and (
+                para.isupper() or
+                para.endswith(":")
+            ):
 
                 document.add_heading(para, level=2)
 
@@ -156,6 +274,7 @@ def create_docx(content):
 
     return buffer
 
+
 if (
     vision_file is not None and
     peo_file is not None and
@@ -164,7 +283,7 @@ if (
 
     try:
 
-        with st.spinner("Reading PDFs..."):
+        with st.spinner("Reading uploaded documents..."):
 
             vision_text = extract_text_from_pdf(vision_file)
 
@@ -172,24 +291,26 @@ if (
 
             course_text = extract_text_from_pdf(course_file)
 
-        with st.spinner("AI is generating refined syllabus..."):
+        with st.spinner("AI is redesigning curriculum intelligently..."):
 
-            refined_output = generate_refined_syllabus(
+            refined_output = generate_curriculum_intelligence_report(
                 vision_text,
                 peo_text,
                 course_text
             )
 
-        st.success("Refined syllabus generated successfully")
+        st.success(
+            "AI Curriculum Intelligence Report Generated Successfully"
+        )
 
         st.markdown(refined_output)
 
         docx_file = create_docx(refined_output)
 
         st.download_button(
-            label="Download Refined DOCX File",
+            label="Download Editable DOCX Report",
             data=docx_file,
-            file_name="Refined_OBE_Course_File.docx",
+            file_name="AI_Curriculum_Intelligence_Report.docx",
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
 
