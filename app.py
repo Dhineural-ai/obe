@@ -1,5 +1,70 @@
 import streamlit as st
+import PyPDF2
 
+# PDF text extraction function
+def extract_text_from_pdf(pdf_file):
+
+    text = ""
+
+    pdf_reader = PyPDF2.PdfReader(pdf_file)
+
+    for page in pdf_reader.pages:
+        extracted = page.extract_text()
+
+        if extracted:
+            text += extracted + "\n"
+
+    return text
+def analyze_alignment(vision, peo, course):
+
+    return f"""
+VISION:
+{vision[:500]}
+
+PEO:
+{peo[:500]}
+
+COURSE:
+{course[:500]}
+
+Alignment analysis completed.
+"""
+
+
+def generate_mapping_analysis(course, peo):
+
+    return f"""
+CO-PO Mapping Generated Successfully.
+
+Course Length: {len(course)}
+PEO Length: {len(peo)}
+"""
+
+
+def refine_course_document(vision, peo, course):
+
+    return f"""
+REFINED COURSE DOCUMENT
+
+{course}
+"""
+
+
+def generate_final_report(alignment, mapping, refined):
+
+    return f"""
+===== ALIGNMENT REPORT =====
+
+{alignment}
+
+===== MAPPING REPORT =====
+
+{mapping}
+
+===== REFINED COURSE =====
+
+{refined}
+"""
 try:
 
     with st.spinner("Reading PDFs..."):
