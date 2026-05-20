@@ -1,5 +1,21 @@
 import streamlit as st
 import PyPDF2
+st.title("OBE Course File Refinement Tool")
+
+vision_file = st.file_uploader(
+    "Upload Vision-Mission PDF",
+    type=["pdf"]
+)
+
+peo_file = st.file_uploader(
+    "Upload PEO-PO PDF",
+    type=["pdf"]
+)
+
+course_file = st.file_uploader(
+    "Upload Course File PDF",
+    type=["pdf"]
+)
 
 # PDF text extraction function
 def extract_text_from_pdf(pdf_file):
