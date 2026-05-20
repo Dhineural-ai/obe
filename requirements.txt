@@ -2,8 +2,8 @@ streamlit
 langchain
 langchain-openai
 openai
-chromadb
 PyPDF2
 python-dotenv
 pandas
 numpy
+chromadb
