@@ -413,6 +413,52 @@ do NOT map it.
 
 IMPORTANT:
 
+A PO/PSO should ONLY be mapped IF:
+
+1. the competency is intentionally targeted
+2. the competency is explicitly developed
+3. the competency is realistically measurable
+4. the competency is assessable through:
+   - assignment
+   - activity
+   - pedagogy
+   - practical
+   - evaluation method
+5. student attainment can realistically be calculated
+
+IMPORTANT:
+
+Do NOT map based on:
+- indirect exposure
+- accidental exposure
+- incidental classroom interaction
+- weak theoretical relevance
+
+IMPORTANT:
+
+A competency should NOT be mapped
+unless a curriculum auditor can clearly observe:
+- where it is taught
+- how it is practiced
+- how it is assessed
+- how attainment is measured
+
+IMPORTANT:
+
+If competency development is:
+- occasional
+- indirect
+- informal
+- weakly observable
+
+then DO NOT map it.
+
+IMPORTANT:
+
+Realistic sparse measurable mapping
+is preferred over inflated theoretical mapping.
+IMPORTANT:
+
 Prefer:
 - fewer accurate mappings
 
