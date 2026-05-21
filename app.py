@@ -70,7 +70,6 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 
-
 def generate_curriculum_intelligence_report(
     vision_text,
     peo_text,
@@ -556,7 +555,6 @@ COURSE FILE:
     return response.choices[0].message.content
 
 
-
 def create_docx(content):
 
     document = Document()
@@ -605,7 +603,9 @@ if (
         with st.spinner("Reading uploaded documents..."):
 
             vision_text = extract_text_from_pdf(vision_file)
+
             peo_text = extract_text_from_pdf(peo_file)
+
             course_text = extract_text_from_pdf(course_file)
 
         with st.spinner("AI is redesigning curriculum intelligently..."):
@@ -617,7 +617,7 @@ if (
             )
 
         course_name_match = re.search(
-            r"Course Name:\\s*(.*)",
+            r"Course Name:\s*(.*)",
             course_text
         )
 
@@ -627,7 +627,7 @@ if (
             course_name = "Curriculum_Report"
 
         safe_course_name = re.sub(
-            r'[^a-zA-Z0-9_\\- ]',
+            r'[^a-zA-Z0-9_ -]',
             '',
             course_name
         ).replace(" ", "_")
