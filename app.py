@@ -141,15 +141,59 @@ For each CO:
 - justify Bloom level
 - explain expected competency
 
-------------------------------------------------
-STEP 6 — INTELLIGENT CO-PO-PSO MAPPING
-------------------------------------------------
+STEP 6 — HOLISTIC INTELLIGENT CO-PO-PSO MAPPING
 
 IMPORTANT:
 
 Do NOT generate random mappings.
 
-You must THINK deeply.
+You must THINK deeply like:
+- NBA evaluator
+- accreditation committee member
+- curriculum expert
+- OBE strategist
+
+IMPORTANT:
+
+PO mapping must NOT be decided
+only from technical content.
+
+PO mapping must ALSO consider:
+
+- pedagogy strategy
+- student activities
+- collaborative learning
+- seminar activities
+- peer teaching
+- communication opportunities
+- self-learning opportunities
+- project execution
+- assignment structure
+- inquiry-based learning
+- presentation opportunities
+- teamwork exposure
+- problem-solving workshops
+- experiential learning
+
+IMPORTANT:
+
+Even analytical/theoretical subjects
+may contribute to:
+- communication skills
+- teamwork
+- ethics
+- project management
+- lifelong learning
+
+IF pedagogy and activities intentionally support them.
+
+Therefore:
+
+Mapping logic must consider BOTH:
+1. Technical competency contribution
+2. Learning-process competency contribution
+
+------------------------------------------------
 
 For each CO:
 
@@ -175,6 +219,24 @@ Mapping strength must be based on:
 - tool usage
 - problem solving
 - real-world application
+- self-learning exposure
+- presentation exposure
+- collaborative learning exposure
+- inquiry-based learning exposure
+
+IMPORTANT:
+
+The AI MUST intelligently map suitable COs
+with:
+- communication PO
+- ethics PO
+- teamwork PO
+- project management PO
+- lifelong learning PO
+
+WHEN pedagogy/activity/assessment supports them.
+
+------------------------------------------------
 
 VERY IMPORTANT:
 
@@ -191,18 +253,22 @@ Explain:
 - WHY contribution strength is MODERATE
 - What competency dimension supports this mapping
 
-MAPPING OF CO1 TO PO2 (VALUE 3):
+MAPPING OF CO1 TO PO9 (VALUE 2):
 Explain:
-- WHY this mapping exists
-- HOW CO1 strongly contributes to PO2
-- WHY mapping strength is STRONG
-- Which analytical/problem-solving competency supports this
+- HOW collaborative pedagogy supports teamwork
+- HOW group analytical activities support PO9
+- WHY teamwork contribution is MODERATE
 
-MAPPING OF CO1 TO PO5 (VALUE 1):
+MAPPING OF CO1 TO PO10 (VALUE 1):
 Explain:
-- WHY this mapping exists
-- WHY contribution is LOW
-- What limited competency exposure supports this mapping
+- HOW presentation/discussion/self-expression
+supports communication competency
+- WHY communication contribution is LOW
+
+MAPPING OF CO1 TO PO12 (VALUE 2):
+Explain:
+- HOW inquiry/self-learning/open-resource exploration
+supports lifelong learning competency
 
 IMPORTANT:
 
@@ -229,6 +295,8 @@ The explanation must clearly show:
 - tool contribution
 - engineering contribution
 - real-world application contribution
+- lifelong learning contribution
+- project management contribution
 
 IMPORTANT:
 
@@ -256,7 +324,7 @@ Use:
 - Technology Based Learning
 - Game Based Learning
 - Collaborative Learning
-
+- Any other Student Centric Teaching Learning Activities 
 STEP 8:
 Generate UNIT-WISE ICT tools.
 
