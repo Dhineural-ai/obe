@@ -146,12 +146,86 @@ Critically identify:
 - lack of analytical learning
 - lack of experiential learning
 
+
 ------------------------------------------------
 STEP 2 — DETERMINE GLOBAL EXPECTATION
 ------------------------------------------------
 
-Determine what students SHOULD ideally learn globally.
+IMPORTANT:
 
+Before analyzing uploaded COs,
+completely IGNORE uploaded:
+- course outcomes
+- mappings
+- assignments
+- pedagogy
+- objectives
+
+and independently determine:
+
+What SHOULD a globally competitive version
+of this course produce?
+
+IMPORTANT:
+
+Treat uploaded syllabus ONLY as:
+- topic reference
+- unit reference
+- course scope reference
+
+NOT as:
+- competency benchmark
+- academic quality benchmark
+- cognitive depth benchmark
+
+IMPORTANT:
+
+Use ONLY:
+- course title
+- unit contents
+- program level
+- engineering discipline
+- expected graduate competency
+- modern industry expectations
+- Washington Accord philosophy
+- global employability expectations
+
+to derive:
+- ideal competency depth
+- ideal analytical rigor
+- ideal practical capability
+- ideal software/tool competency
+- ideal problem-solving competency
+- ideal industry readiness
+- ideal Bloom-level expectations
+
+IMPORTANT:
+
+First independently derive:
+- what students SHOULD ideally learn globally
+
+THEN compare against uploaded curriculum.
+
+IMPORTANT:
+
+The redesigned curriculum should be based on:
+- ideal global competency expectations
+NOT:
+- uploaded syllabus quality level.
+
+IMPORTANT:
+
+Challenge:
+- weak competency depth
+- weak analytical rigor
+- weak practical orientation
+- outdated academic expectations
+- insufficient industry readiness
+- low Bloom levels
+- superficial assignments
+- non-competitive pedagogy
+
+Determine what students SHOULD ideally learn globally.
 ------------------------------------------------
 STEP 3 — REDESIGN PREREQUISITES
 ------------------------------------------------
