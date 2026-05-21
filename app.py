@@ -48,6 +48,7 @@ course_file = st.file_uploader(
     type=["pdf"]
 )
 
+
 def extract_text_from_pdf(pdf_file):
 
     text = ""
@@ -68,6 +69,8 @@ def extract_text_from_pdf(pdf_file):
 
     return text
 
+
+
 def generate_curriculum_intelligence_report(
     vision_text,
     peo_text,
@@ -83,6 +86,8 @@ You are:
 - Curriculum architect
 - Bloom taxonomy specialist
 - OBE strategist
+- Accreditation evaluator
+- Global curriculum redesign expert
 
 IMPORTANT:
 DO NOT trust uploaded syllabus blindly.
@@ -92,10 +97,11 @@ Assume:
 - COs may be weak
 - mappings may be illogical
 - pedagogy may be ineffective
+- assignments may be weak
 
 unless proven otherwise.
 
-DO NOT simply paraphrase.
+DO NOT simply paraphrase uploaded syllabus.
 
 You must critically audit and redesign curriculum according to:
 - global standards
@@ -105,7 +111,10 @@ You must critically audit and redesign curriculum according to:
 - Bloom taxonomy
 - employability
 - practical competency
+- analytical competency
+- outcome based education philosophy
 
+IMPORTANT:
 DO NOT CHANGE:
 - unit titles
 - unit contents
@@ -120,40 +129,52 @@ You ARE allowed to redesign:
 - tutorials
 - practical suggestions
 
-STEP 1:
-Analyze weaknesses in current syllabus.
+------------------------------------------------
+STEP 1 — CURRICULUM WEAKNESS ANALYSIS
+------------------------------------------------
 
-STEP 2:
+Critically identify:
+- weak prerequisites
+- unrealistic objectives
+- weak COs
+- non measurable COs
+- low Bloom levels
+- weak mapping logic
+- mapping inflation
+- weak pedagogy
+- lack of practical competency
+- lack of industry orientation
+- lack of analytical learning
+- lack of experiential learning
+
+------------------------------------------------
+STEP 2 — DETERMINE GLOBAL EXPECTATION
+------------------------------------------------
+
 Determine what students SHOULD ideally learn globally.
 
-STEP 3:
-Redesign prerequisites logically.
+------------------------------------------------
+STEP 3 — REDESIGN PREREQUISITES
+------------------------------------------------
 
-STEP 4:
-Redesign course objectives intelligently.
+Generate realistic academic prerequisites.
+
+------------------------------------------------
+STEP 4 — REDESIGN COURSE OBJECTIVES
+------------------------------------------------
+
+Generate modern industry-aligned course objectives.
 
 ------------------------------------------------
 STEP 5 — REDESIGN COURSE OUTCOMES
 ------------------------------------------------
 
 IMPORTANT:
-
 DO NOT reuse weak uploaded COs blindly.
 
-Critically evaluate existing COs and redesign them according to:
-- global curriculum standards
-- NBA expectations
-- Bloom taxonomy
-- graduate competency expectations
-- industry expectations
-- practical competency
-- analytical competency
-- employability requirements
-- measurable assessment expectations
-
 ------------------------------------------------
-
 STEP 5A — CO DESIGN INTELLIGENCE
+------------------------------------------------
 
 IMPORTANT:
 
@@ -166,12 +187,12 @@ Course Outcomes must NOT contain:
 IMPORTANT:
 
 Avoid COs such as:
-- "analyze and apply"
-- "understand and evaluate"
-- "identify and design"
-- "apply and create"
-
-unless one competency is clearly dominant.
+- analyze and apply
+- understand and evaluate
+- identify and design
+- apply and create
+- recall and apply
+- understand and apply
 
 IMPORTANT:
 
@@ -191,8 +212,8 @@ rewrite it into:
 - single-dominant-competency outcome
 
 ------------------------------------------------
-
 STEP 5B — CONTEXTUAL BLOOM TAXONOMY INTELLIGENCE
+------------------------------------------------
 
 IMPORTANT:
 
@@ -223,13 +244,9 @@ The AI must identify:
 - dominant cognitive intent
 of the FULL CO statement.
 
-NOT merely:
-- action verbs
-- Bloom keyword lists
-
 ------------------------------------------------
-
 STEP 5C — IDEAL CO GENERATION
+------------------------------------------------
 
 Generate IDEAL Course Outcomes according to:
 - unit depth
@@ -256,7 +273,6 @@ Generated COs should:
 IMPORTANT:
 
 For EACH generated CO provide:
-
 1. Final CO Statement
 2. Dominant Bloom Level
 3. Why this Bloom Level is appropriate
@@ -268,8 +284,6 @@ For EACH generated CO provide:
 STEP 5D — CO ALIGNMENT INTELLIGENCE
 ------------------------------------------------
 
-IMPORTANT:
-
 For EVERY Course Outcome (CO),
 analyze and explain alignment with:
 - Vision
@@ -278,59 +292,6 @@ analyze and explain alignment with:
 - POs
 - PSOs
 
-IMPORTANT:
-
-Do NOT generate generic statements.
-
-For EACH CO explain:
-1. HOW the CO contributes to institutional Vision
-2. HOW the CO supports institutional Mission
-3. HOW the CO contributes to specific PEOs
-4. HOW the CO supports specific POs
-5. HOW the CO supports specific PSOs
-
-IMPORTANT:
-
-The explanation must include:
-- cognitive contribution
-- analytical contribution
-- employability contribution
-- practical competency contribution
-- innovation contribution
-- teamwork contribution
-- communication contribution
-- engineering contribution
-- problem-solving contribution
-
-FORMAT STRICTLY LIKE THIS:
-
-ALIGNMENT OF CO1 WITH VISION:
-Explain clearly.
-
-ALIGNMENT OF CO1 WITH MISSION:
-Explain clearly.
-
-ALIGNMENT OF CO1 WITH PEO1:
-Explain clearly.
-
-ALIGNMENT OF CO1 WITH PO1:
-Explain clearly.
-
-ALIGNMENT OF CO1 WITH PSO1:
-Explain clearly.
-
-IMPORTANT:
-
-Do this for ALL COs.
-
-The explanation must be:
-- accreditation ready
-- academically meaningful
-- logically defendable
-- competency based
-- outcome based
-- globally aligned
-
 ------------------------------------------------
 STEP 6 — SEMANTIC HOLISTIC INTELLIGENT CO-PO-PSO MAPPING
 ------------------------------------------------
@@ -370,8 +331,8 @@ PO mapping must ALSO consider:
 - assessment strategy
 
 ------------------------------------------------
-
 STEP 6A — SEMANTIC PO/PSO CLASSIFICATION
+------------------------------------------------
 
 IMPORTANT:
 
@@ -408,8 +369,8 @@ NOT based on:
 - hardcoded mapping rules
 
 ------------------------------------------------
-
 STEP 6B — INTELLIGENT CO-PO-PSO MAPPING
+------------------------------------------------
 
 For each CO:
 
@@ -423,29 +384,9 @@ Use mapping levels:
 - 2 = Moderate
 - 3 = Strong
 
-IMPORTANT:
-
-Mapping strength must be based on:
-- actual competency contribution
-- Bloom level
-- practical exposure
-- analytical depth
-- communication exposure
-- teamwork exposure
-- tool usage
-- problem solving
-- real-world application
-- self-learning exposure
-- presentation exposure
-- collaborative learning exposure
-- inquiry-based learning exposure
-- assessment evidence
-- assignment evidence
-- pedagogy evidence
-
 ------------------------------------------------
-
 STEP 6C — MAPPING RESTRAINT INTELLIGENCE
+------------------------------------------------
 
 IMPORTANT:
 
@@ -459,19 +400,10 @@ over dense artificial mapping.
 
 IMPORTANT:
 
-Non-cognitive competencies such as:
-- communication
-- teamwork
-- ethics
-- leadership
-- project management
-- lifelong learning
-- sustainability
-
-should ONLY be mapped IF:
+Non-cognitive competencies should ONLY be mapped IF:
 - pedagogy explicitly supports them
-- assignments explicitly support them
-- activities explicitly support them
+- assignments explicitly supports them
+- activities explicitly supports them
 - assessment explicitly supports them
 - practical execution explicitly supports them
 
@@ -479,12 +411,6 @@ IMPORTANT:
 
 If contribution is indirect or weak,
 do NOT map it.
-
-Mapping should reflect:
-- genuine measurable contribution
-- observable competency development
-- defendable accreditation logic
-- realistic student competency attainment
 
 IMPORTANT:
 
@@ -494,388 +420,112 @@ Prefer:
 over:
 - many inflated mappings.
 
-A mapping should only exist if:
-students genuinely demonstrate
-that competency through:
-- learning activities
-- assessment
-- assignments
-- pedagogy
-- practical execution
-- collaborative engagement
-- presentations
-- inquiry activities
-
+------------------------------------------------
+STEP 6D — INDIVIDUAL JUSTIFICATION ENGINE
 ------------------------------------------------
 
-STEP 6D — INDIVIDUAL JUSTIFICATION ENGINE
-
-VERY IMPORTANT:
+IMPORTANT:
 
 After generating mapping matrix,
-generate INDIVIDUAL JUSTIFICATION
-for EVERY SINGLE mapping value.
+generate COMPLETE justification
+for EVERY SINGLE mapped cell.
 
-FORMAT STRICTLY LIKE THIS:
+DO NOT generate:
+- sample justification
+- partial justification
+- demonstration only
 
-MAPPING OF CO1 TO PO1 (VALUE 3):
-Explain:
-- WHY this mapping exists
-- HOW CO1 contributes to PO1
-- WHY contribution strength is STRONG
-- Which competency dimensions support this mapping
-- Which Bloom level supports this mapping
-- Which pedagogy/assessment/activity supports this mapping
-
-MAPPING OF CO1 TO PO9 (VALUE 2):
-Explain:
-- HOW collaborative pedagogy supports teamwork
-- HOW group analytical activities support this competency
-- WHY teamwork contribution is MODERATE
-
-MAPPING OF CO1 TO PO10 (VALUE 1):
-Explain:
-- HOW presentation/discussion/self-expression
-supports communication competency
-- WHY communication contribution is LOW
-
-IMPORTANT:
-
-DO THIS FOR:
-- EVERY CO
-- EVERY mapped PO
-- EVERY mapped PSO
-
-The justification must NOT be generic.
-
-Each justification must be:
-- competency-specific
-- Bloom-specific
-- logically defendable
-- accreditation-ready
-- academically meaningful
-- pedagogy-aware
-- assessment-aware
-
-The explanation must clearly show:
-- cognitive contribution
-- analytical contribution
-- practical contribution
-- communication contribution
-- teamwork contribution
-- tool contribution
-- engineering contribution
-- real-world application contribution
-- lifelong learning contribution
-- leadership contribution
-- project management contribution
-
-IMPORTANT:
-
-The justification should be detailed enough
-that an accreditation evaluator can clearly understand:
-WHY the mapping value is logically correct.
-
-STEP 6 — SEMANTIC HOLISTIC INTELLIGENT CO-PO-PSO MAPPING
-
-IMPORTANT:
-
-Do NOT generate random mappings.
-
-You must THINK deeply like:
-- NBA evaluator
-- accreditation committee member
-- curriculum expert
-- OBE strategist
-- global curriculum architect
-
-IMPORTANT:
-
-PO mapping must NOT be decided
-only from technical content.
-
-PO mapping must ALSO consider:
-- pedagogy strategy
-- student activities
-- collaborative learning
-- seminar activities
-- peer teaching
-- communication opportunities
-- self-learning opportunities
-- project execution
-- assignment structure
-- inquiry-based learning
-- presentation opportunities
-- teamwork exposure
-- problem-solving workshops
-- experiential learning
-- practical implementation
-- assessment strategy
+Generate ALL justifications fully.
 
 ------------------------------------------------
-
-STEP 6A — SEMANTIC PO/PSO CLASSIFICATION
-
-IMPORTANT:
-
-First analyze uploaded PO and PSO statements semantically.
-
-Classify POs and PSOs into competency categories such as:
-
-- cognitive competency
-- analytical competency
-- practical competency
-- engineering competency
-- tool usage competency
-- communication competency
-- teamwork competency
-- ethics competency
-- leadership competency
-- project-management competency
-- lifelong-learning competency
-- sustainability competency
-- innovation competency
-- entrepreneurship competency
-- societal competency
-
-IMPORTANT:
-
-The classification must be based on:
-- actual meaning of uploaded PO statement
-- competency implied by PO statement
-- graduate attribute represented by PO statement
-
-NOT based on:
-- PO number
-- fixed assumptions
-- predefined university structure
-- hardcoded mapping rules
-
+STEP 7 — UNIT-WISE PEDAGOGY
 ------------------------------------------------
 
-STEP 6B — INTELLIGENT CO-PO-PSO MAPPING
-
-For each CO:
-
-Determine:
-- which PO is genuinely supported
-- which PSO is genuinely supported
-- what mapping strength is realistic
-
-Use mapping levels:
-- 1 = Low
-- 2 = Moderate
-- 3 = Strong
-
-IMPORTANT:
-
-Mapping strength must be based on:
-- actual competency contribution
-- Bloom level
-- practical exposure
-- analytical depth
-- communication exposure
-- teamwork exposure
-- tool usage
-- problem solving
-- real-world application
-- self-learning exposure
-- presentation exposure
-- collaborative learning exposure
-- inquiry-based learning exposure
-- assessment evidence
-- assignment evidence
-- pedagogy evidence
-
-------------------------------------------------
-
-STEP 6C — MAPPING RESTRAINT INTELLIGENCE
-
-IMPORTANT:
-
-Avoid mapping inflation.
-
-Do NOT map a CO to a PO/PSO
-unless there is STRONG logical evidence.
-
-Sparse meaningful mapping is preferred
-over dense artificial mapping.
-
-IMPORTANT:
-
-Non-cognitive competencies such as:
-- communication
-- teamwork
-- ethics
-- leadership
-- project management
-- lifelong learning
-- sustainability
-
-should ONLY be mapped IF:
-- pedagogy explicitly supports them
-- assignments explicitly support them
-- activities explicitly support them
-- assessment explicitly supports them
-- practical execution explicitly supports them
-
-IMPORTANT:
-
-If contribution is indirect or weak,
-do NOT map it.
-
-Mapping should reflect:
-- genuine measurable contribution
-- observable competency development
-- defendable accreditation logic
-- realistic student competency attainment
-
-IMPORTANT:
-
-Prefer:
-- fewer accurate mappings
-
-over:
-- many inflated mappings.
-
-A mapping should only exist if:
-students genuinely demonstrate
-that competency through:
-- learning activities
-- assessment
-- assignments
-- pedagogy
-- practical execution
-- collaborative engagement
-- presentations
-- inquiry activities
-
-------------------------------------------------
-
-STEP 6D — INDIVIDUAL JUSTIFICATION ENGINE
-
-VERY IMPORTANT:
-
-After generating mapping matrix,
-generate INDIVIDUAL JUSTIFICATION
-for EVERY SINGLE mapping value.
-
-FORMAT STRICTLY LIKE THIS:
-
-MAPPING OF CO1 TO PO1 (VALUE 3):
-Explain:
-- WHY this mapping exists
-- HOW CO1 contributes to PO1
-- WHY contribution strength is STRONG
-- Which competency dimensions support this mapping
-- Which Bloom level supports this mapping
-- Which pedagogy/assessment/activity supports this mapping
-
-MAPPING OF CO1 TO PO9 (VALUE 2):
-Explain:
-- HOW collaborative pedagogy supports teamwork
-- HOW group analytical activities support this competency
-- WHY teamwork contribution is MODERATE
-
-MAPPING OF CO1 TO PO10 (VALUE 1):
-Explain:
-- HOW presentation/discussion/self-expression
-supports communication competency
-- WHY communication contribution is LOW
-
-IMPORTANT:
-
-DO THIS FOR:
-- EVERY CO
-- EVERY mapped PO
-- EVERY mapped PSO
-
-The justification must NOT be generic.
-
-Each justification must be:
-- competency-specific
-- Bloom-specific
-- logically defendable
-- accreditation-ready
-- academically meaningful
-- pedagogy-aware
-- assessment-aware
-
-The explanation must clearly show:
-- cognitive contribution
-- analytical contribution
-- practical contribution
-- communication contribution
-- teamwork contribution
-- tool contribution
-- engineering contribution
-- real-world application contribution
-- lifelong learning contribution
-- leadership contribution
-- project management contribution
-
-IMPORTANT:
-
-The justification should be detailed enough
-that an accreditation evaluator can clearly understand:
-WHY the mapping value is logically correct.
-
-STEP 7:
-Generate UNIT-WISE pedagogy.
-
-For each unit:
+Generate for EACH unit:
 - pedagogy method
 - exact activity
-- how activity should be conducted
+- execution strategy
 - mapped CO
 - mapped PO
 - mapped PSO
 - graduate competency developed
 
-Use:
-- Inquiry Based Learning
-- Peer Teaching
-- Group Learning
-- Problem Solving
-- Technology Based Learning
-- Game Based Learning
-- Collaborative Learning
-- Any other Student Centric Teaching Learning Activities 
-STEP 8:
-Generate UNIT-WISE ICT tools.
+------------------------------------------------
+STEP 8 — UNIT-WISE ICT TOOLS
+------------------------------------------------
 
-STEP 9:
-Generate 3 HIGH VALUE TERM WORKS.
+Generate ICT tools unit-wise.
 
-Assignments must:
-- cover all units
-- support CO attainment
-- support PO attainment
-- improve employability
-- improve communication
-- improve teamwork
-- improve practical competency
+------------------------------------------------
+STEP 9 — HIGH VALUE TERM WORKS
+------------------------------------------------
 
-For each assignment provide:
-- title
-- objective
-- execution strategy
-- mapped COs
-- mapped POs
-- mapped PSOs
-- Bloom level
+Generate 3 high value assignments.
 
-STEP 10:
+------------------------------------------------
+STEP 10 — PRACTICALS & TUTORIALS
+------------------------------------------------
+
 Suggest improved practicals and tutorials.
 
-STEP 11:
+------------------------------------------------
+STEP 11 — INDUSTRY ACTIVITIES
+------------------------------------------------
+
 Generate industry-oriented activities.
 
-STEP 12:
-Generate SDG mapping.
+------------------------------------------------
+STEP 12 — SDG ALIGNMENT
+------------------------------------------------
 
-STEP 13:
-Generate final modern accreditation-ready course file.
+Generate meaningful SDG mapping.
+
+------------------------------------------------
+STEP 13 — FINAL OUTPUT
+------------------------------------------------
+
+Generate final accreditation-ready course file.
+
+------------------------------------------------
+FINAL OUTPUT ENFORCEMENT RULES
+------------------------------------------------
+
+IMPORTANT:
+
+You MUST generate COMPLETE final outputs.
+
+DO NOT:
+- give examples
+- give placeholders
+- give partial templates
+- say continue similarly
+- summarize remaining sections
+- skip mappings
+- skip justifications
+
+IMPORTANT:
+
+Generate FULL detailed output for:
+- ALL COs
+- ALL mapped POs
+- ALL mapped PSOs
+- ALL justifications
+- ALL pedagogy sections
+- ALL assignments
+- ALL alignments
+
+IMPORTANT:
+
+Generate EVERYTHING explicitly.
+
+IMPORTANT:
+
+The output must look like:
+- actual final accreditation report
+NOT:
+- instruction template
+- guideline draft
+- example structure
 
 VISION & MISSION:
 {vision_text}
@@ -900,10 +550,12 @@ COURSE FILE:
                 "content": prompt
             }
         ],
-        temperature=0.4
+        temperature=0.3
     )
 
     return response.choices[0].message.content
+
+
 
 def create_docx(content):
 
@@ -941,6 +593,7 @@ def create_docx(content):
 
     return buffer
 
+
 if (
     vision_file is not None and
     peo_file is not None and
@@ -952,9 +605,7 @@ if (
         with st.spinner("Reading uploaded documents..."):
 
             vision_text = extract_text_from_pdf(vision_file)
-
             peo_text = extract_text_from_pdf(peo_file)
-
             course_text = extract_text_from_pdf(course_file)
 
         with st.spinner("AI is redesigning curriculum intelligently..."):
@@ -965,18 +616,46 @@ if (
                 course_text
             )
 
+        course_name_match = re.search(
+            r"Course Name:\\s*(.*)",
+            course_text
+        )
+
+        if course_name_match:
+            course_name = course_name_match.group(1).strip()
+        else:
+            course_name = "Curriculum_Report"
+
+        safe_course_name = re.sub(
+            r'[^a-zA-Z0-9_\\- ]',
+            '',
+            course_name
+        ).replace(" ", "_")
+
+        final_filename = (
+            f"{safe_course_name}_"
+            f"Curated_by_Dr_Sagar_Patel_Academic_Dean_SOU.docx"
+        )
+
+        document_note = (
+            "\n\n---\n"
+            "Report Curated by Dr. Sagar Patel, Academic Dean, SOU"
+        )
+
+        refined_output = refined_output + document_note
+
+        docx_file = create_docx(refined_output)
+
         st.success(
             "AI Curriculum Intelligence Report Generated Successfully"
         )
 
         st.markdown(refined_output)
 
-        docx_file = create_docx(refined_output)
-
         st.download_button(
             label="Download Editable DOCX Report",
             data=docx_file,
-            file_name="AI_Curriculum_Intelligence_Report.docx",
+            file_name=final_filename,
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
 
