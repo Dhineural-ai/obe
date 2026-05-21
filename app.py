@@ -399,6 +399,40 @@ over dense artificial mapping.
 
 IMPORTANT:
 
+If justification contains statements such as:
+- weakly related
+- indirectly related
+- not central
+- not a focus
+- incidental exposure
+- minor relevance
+- occasional exposure
+
+THEN:
+DO NOT MAP that PO/PSO at all.
+
+IMPORTANT:
+
+A mapping value of 1 should ONLY be used IF:
+- competency is intentionally introduced
+- competency is observable
+- competency is assessable
+- competency development is measurable
+- curriculum explicitly supports it
+
+IMPORTANT:
+
+Do NOT assign mapping value 1
+merely because:
+- some indirect relation exists
+- some theoretical possibility exists
+- some accidental exposure exists
+
+If competency is not intentionally developed,
+REMOVE the mapping entirely.
+
+IMPORTANT:
+
 Non-cognitive competencies should ONLY be mapped IF:
 - pedagogy explicitly supports them
 - assignments explicitly supports them
@@ -466,21 +500,68 @@ over:
 - many inflated mappings.
 
 ------------------------------------------------
-STEP 6D — INDIVIDUAL JUSTIFICATION ENGINE
+STEP 6D — DETAILED INDIVIDUAL JUSTIFICATION ENGINE
 ------------------------------------------------
 
 IMPORTANT:
 
-After generating mapping matrix,
-generate COMPLETE justification
+Generate DETAILED justification separately
 for EVERY SINGLE mapped cell.
 
-DO NOT generate:
-- sample justification
-- partial justification
-- demonstration only
+DO NOT summarize.
 
-Generate ALL justifications fully.
+DO NOT use bullet-shortcuts.
+
+DO NOT compress mappings.
+
+DO NOT generate grouped explanations.
+
+IMPORTANT:
+
+For EVERY mapped relation generate:
+
+MAPPING OF CO1 TO PO1 (VALUE 3):
+- WHY this mapping exists
+- HOW competency is intentionally developed
+- HOW pedagogy supports this competency
+- HOW assessment measures this competency
+- WHY contribution strength is STRONG
+- HOW student attainment can be measured
+- WHY this mapping is accreditation-defendable
+
+IMPORTANT:
+
+Repeat this COMPLETE structure
+for EVERY mapped PO and PSO.
+
+IMPORTANT:
+
+DO NOT use formats such as:
+- PO1 (3): strong alignment
+- grouped bullets
+- compressed summaries
+
+IMPORTANT:
+
+Each justification must appear as:
+INDIVIDUAL ACCREDITATION ANALYSIS BLOCK.
+
+IMPORTANT:
+
+If matrix contains:
+CO1 → PO1
+CO1 → PO2
+CO1 → PSO1
+
+Then generate:
+
+MAPPING OF CO1 TO PO1 (VALUE X)
+
+MAPPING OF CO1 TO PO2 (VALUE X)
+
+MAPPING OF CO1 TO PSO1 (VALUE X)
+
+all separately and fully explained.
 
 ------------------------------------------------
 STEP 7 — UNIT-WISE PEDAGOGY
